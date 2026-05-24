@@ -6,149 +6,214 @@
 <title>Cruise Finder</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: #f4f7fb;
-  }
 
-  #shipModalContent::-webkit-scrollbar {
-    width: 8px;
-  }
-  #shipModalContent::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.2);
-    border-radius: 8px;
-  }
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#f3f7fb;
+  color:#1e293b;
+}
+
+.option-btn{
+  padding:10px 18px;
+  border-radius:999px;
+  background:white;
+  border:1px solid #dbe4ee;
+  transition:0.2s ease;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:500;
+}
+
+.option-btn:hover{
+  background:#eff6ff;
+}
+
+.option-btn.active{
+  background:#2563eb;
+  color:white;
+  border-color:#2563eb;
+}
+
+.ship-card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+  transition:0.25s ease;
+}
+
+.ship-card:hover{
+  transform:translateY(-4px);
+}
+
 </style>
 </head>
 
-<body class="min-h-screen text-gray-900">
+<body>
 
-<!-- HERO -->
-<section class="relative h-[460px] w-full overflow-hidden">
+<!-- TOP SECTION -->
 
-  <!-- Ocean background -->
-  <img
-    src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80"
-    class="absolute inset-0 w-full h-full object-cover scale-105"
-  />
+<section class="max-w-6xl mx-auto px-6 pt-10">
 
-  <!-- Modern bright overlay (no dark cut-off) -->
-  <div class="absolute inset-0 bg-gradient-to-r from-sky-400/30 via-blue-300/20 to-teal-300/25"></div>
+  <div class="bg-white rounded-[32px] shadow-xl border border-gray-200 p-8">
 
-  <!-- Soft atmosphere layer -->
-  <div class="absolute inset-0 bg-white/10"></div>
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
 
-  <!-- Content -->
-  <div class="relative z-10 h-full flex flex-col justify-center px-10 text-white">
+      <div class="max-w-2xl">
 
-    <h1 class="text-6xl font-bold tracking-tight">
-      Cruise Finder
-    </h1>
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
+          Cruise Finder
+        </h1>
 
-    <p class="mt-4 text-lg text-white/90 max-w-xl">
-      Discover cruises in a more interactive way — match ships to your style instead of scrolling endless lists.
-    </p>
+        <p class="mt-5 text-lg text-gray-600">
+          Discover cruise ships in a more interactive way.
+        </p>
 
-    <div class="mt-6 flex flex-wrap gap-2 text-sm">
-      <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur">
-        Interactive matching
-      </span>
-      <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur">
-        Personalized results
-      </span>
-      <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur">
-        Faster discovery
-      </span>
+      </div>
+
+      <div class="w-full lg:w-[420px] h-[220px] rounded-3xl overflow-hidden shadow-lg">
+
+        <img
+          src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80"
+          class="w-full h-full object-cover"
+        >
+
+      </div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- FILTER SECTION -->
-<section class="max-w-5xl mx-auto mt-8 px-4">
+<!-- FILTERS -->
 
-  <div class="bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-6">
+<section class="max-w-6xl mx-auto px-6 mt-8">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="bg-white rounded-[32px] shadow-lg border border-gray-200 p-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- BUDGET -->
 
       <div>
-        <label class="font-bold text-sm">Budget</label>
-        <select id="budget" class="w-full mt-2 p-2 border rounded-xl">
-          <option>Budget</option>
-          <option>Mid</option>
-          <option>Luxury</option>
+
+        <label class="font-bold text-sm">
+          Budget
+        </label>
+
+        <select id="budget"
+          class="w-full mt-3 p-3 rounded-2xl border border-gray-200 bg-gray-50">
+
+          <option value="Budget">Budget</option>
+          <option value="Mid">Mid</option>
+          <option value="Luxury">Luxury</option>
+
         </select>
+
       </div>
 
-      <div>
-        <label class="font-bold text-sm">Ship Size</label>
-        <select id="size" class="w-full mt-2 p-2 border rounded-xl">
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
-          <option>Mega</option>
-        </select>
-      </div>
+      <!-- SIZE -->
 
       <div>
-        <label class="font-bold text-sm">Vibes</label>
-        <select id="vibes" multiple size="4" class="w-full mt-2 p-2 border rounded-xl">
-          <option>Family</option>
-          <option>Adventure</option>
-          <option>Relaxation</option>
-          <option>Party</option>
-        </select>
-      </div>
 
-      <div>
-        <label class="font-bold text-sm">Amenities</label>
-        <select id="amenities" multiple size="6" class="w-full mt-2 p-2 border rounded-xl">
-          <option>Pools</option>
-          <option>Spa</option>
-          <option>Shows</option>
-          <option>Bars</option>
-          <option>Adventure Park</option>
-          <option>Kids Club</option>
+        <label class="font-bold text-sm">
+          Ship Size
+        </label>
+
+        <select id="size"
+          class="w-full mt-3 p-3 rounded-2xl border border-gray-200 bg-gray-50">
+
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+          <option value="Mega">Mega</option>
+
         </select>
+
       </div>
 
     </div>
 
-    <div class="text-center mt-6">
+    <!-- ATMOSPHERE -->
+
+    <div class="mt-8">
+
+      <label class="font-bold text-sm">
+        Atmosphere
+      </label>
+
+      <div id="atmosphere" class="flex flex-wrap gap-3 mt-4">
+
+        <button class="option-btn" data-value="Family">
+          Family
+        </button>
+
+        <button class="option-btn" data-value="Adventure">
+          Adventure
+        </button>
+
+        <button class="option-btn" data-value="Relaxation">
+          Relaxation
+        </button>
+
+        <button class="option-btn" data-value="Party">
+          Party
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- AMENITIES -->
+
+    <div class="mt-8">
+
+      <label class="font-bold text-sm">
+        Amenities
+      </label>
+
+      <div id="amenities" class="flex flex-wrap gap-3 mt-4">
+
+        <button class="option-btn" data-value="Pools">Pools</button>
+        <button class="option-btn" data-value="Spa">Spa</button>
+        <button class="option-btn" data-value="Shows">Shows</button>
+        <button class="option-btn" data-value="Bars">Bars</button>
+        <button class="option-btn" data-value="Adventure Park">Adventure Park</button>
+        <button class="option-btn" data-value="Kids Club">Kids Club</button>
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <div class="text-center mt-10">
+
       <button onclick="calculateScores()"
-        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl font-bold shadow-lg transition">
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition">
+
         Find My Perfect Ship
+
       </button>
+
     </div>
 
   </div>
+
 </section>
 
 <!-- RESULTS -->
+
 <section id="results"
-  class="max-w-6xl mx-auto px-4 mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-16">
+  class="max-w-6xl mx-auto px-6 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
 </section>
 
-<!-- MODAL -->
-<div id="shipModal"
-  class="fixed inset-0 bg-black/60 flex items-center justify-center p-4 opacity-0 pointer-events-none transition">
-
-  <div id="shipModalContent"
-    class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform translate-y-10 transition">
-
-    <button onclick="closeModal()"
-      class="absolute top-4 right-5 text-2xl font-bold text-gray-600 hover:text-black">
-      &times;
-    </button>
-
-    <div id="modalContent"></div>
-
-  </div>
-</div>
-
 <script src="ship_matcher.js"></script>
+
 </body>
 </html>
