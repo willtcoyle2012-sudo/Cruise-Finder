@@ -27,9 +27,7 @@ body{
   font-weight:500;
 }
 
-.option-btn:hover{
-  background:#eff6ff;
-}
+.option-btn:hover{ background:#eff6ff; }
 
 .option-btn.active{
   background:#2563eb;
@@ -53,23 +51,24 @@ body{
 
 <body>
 
-<!-- TOP -->
+<!-- HERO -->
 <section class="max-w-6xl mx-auto px-6 pt-10">
-  <div class="bg-white rounded-[32px] shadow-xl border border-gray-200 p-8">
+
+  <div class="bg-white rounded-[32px] shadow-xl border p-8">
+
     <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
 
       <div class="max-w-2xl">
-        <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
-          Cruise Finder
-        </h1>
-        <p class="mt-5 text-lg text-gray-600">
-          Discover cruise ships in a more interactive way.
-        </p>
+        <h1 class="text-5xl font-bold">Cruise Finder</h1>
+        <p class="mt-4 text-gray-600">Discover your perfect cruise ship.</p>
       </div>
 
       <div class="w-full lg:w-[420px] h-[220px] rounded-3xl overflow-hidden shadow-lg">
-        <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80"
-             class="w-full h-full object-cover">
+        <img
+          id="bannerImage"
+          class="w-full h-full object-cover"
+          src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147843317/images/6851e1-8b04-3a1f-3f13-f66668f4a45_rccl-cococay-landscape-professor-melissa-horizontal-3.jpg"
+        >
       </div>
 
     </div>
@@ -78,7 +77,8 @@ body{
 
 <!-- FILTERS -->
 <section class="max-w-6xl mx-auto px-6 mt-8">
-  <div class="bg-white rounded-[32px] shadow-lg border border-gray-200 p-8">
+
+  <div class="bg-white rounded-[32px] shadow-lg border p-8">
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -137,6 +137,7 @@ body{
     </div>
 
   </div>
+
 </section>
 
 <!-- RESULTS -->
@@ -144,178 +145,7 @@ body{
   class="max-w-6xl mx-auto px-6 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
 </section>
 
-<script>
-// =========================
-// STATE
-// =========================
-let currentResults = [];
-
-// =========================
-// BUTTON TOGGLES
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-
-  document.querySelectorAll('.option-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      button.classList.toggle('active');
-    });
-  });
-
-});
-
-// =========================
-// GET SELECTED BUTTONS
-// =========================
-function getSelectedButtons(id){
-  return Array.from(
-    document.querySelectorAll(`#${id} .active`)
-  ).map(button => button.dataset.value);
-}
-
-// =========================
-// SHIP DATA
-// =========================
-const ships = [
-  {
-    name: "Celebrity Millennium",
-    budget: "Luxury",
-    atmosphere: ["Relaxation", "Adventure"],
-    size: "Medium",
-    amenities: ["Pools", "Spa", "Shows", "Bars"],
-    image: "https://www.wendywutours.co.uk/resource/upload/2563/cel-ml-blue-hull-aerial-4-banner.jpg.webp",
-    attractions: ["Celebrity Theater","Solarium","Spa & Fitness Center"]
-  },
-  {
-    name: "Nieuw Statendam",
-    budget: "Luxury",
-    atmosphere: ["Relaxation", "Adventure"],
-    size: "Medium",
-    amenities: ["Bars", "Spa", "Shows"],
-    image: "https://res.cloudinary.com/cruiseimages/q_auto,f_auto,w_750,ar_4:3,c_fit/ship/1144214.jpg",
-    attractions: ["Music Hall","Retreat Spa","Main Dining Room"]
-  },
-  {
-    name: "MSC Divina",
-    budget: "Mid",
-    atmosphere: ["Family", "Relaxation"],
-    size: "Large",
-    amenities: ["Pools", "Shows", "Kids Club", "Bars"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MSC_Divina_a_Istanbul.JPG/960px-MSC_Divina_a_Istanbul.JPG",
-    attractions: ["MSC Theater","Aurea Spa","Kids Club Aqua Park"]
-  },
-  {
-    name: "Mariner of the Seas",
-    budget: "Mid",
-    atmosphere: ["Adventure", "Family"],
-    size: "Large",
-    amenities: ["Pools", "Adventure Park", "Shows", "Bars", "Kids Club"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Bahamas_Cruise_-_ship_exterior_-_June_2018_%283303%29.jpg/960px-Bahamas_Cruise_-_ship_exterior_-_June_2018_%283303%29.jpg",
-    attractions: ["FlowRider","Adventure Ocean","Broadway Shows"]
-  },
-  {
-    name: "Carnival Vista",
-    budget: "Budget",
-    atmosphere: ["Adventure", "Party"],
-    size: "Large",
-    amenities: ["Pools", "Bars", "Shows"],
-    image: "https://eatsleepcruise.com/wp-content/uploads/2025/07/Carnival-Vista-Cruise-Review-Feature.jpg.optimal.jpg",
-    attractions: ["SkyRide","WaterWorks Park","IMAX Theater"]
-  },
-  {
-    name: "Norwegian Breakaway",
-    budget: "Mid",
-    atmosphere: ["Party", "Adventure"],
-    size: "Large",
-    amenities: ["Pools", "Bars", "Shows", "Adventure Park"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Norwegian_Breakaway_Jan_20_2023.jpg/960px-Norwegian_Breakaway_Jan_20_2023.jpg",
-    attractions: ["Waterfront","Ropes Course","Burn the Floor","Aqua Slides"]
-  },
-  {
-    name: "Harmony of the Seas",
-    budget: "Mid",
-    atmosphere: ["Adventure", "Family"],
-    size: "Mega",
-    amenities: ["Pools", "Spa", "Shows", "Adventure Park", "Bars"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/RCCL_Harmony_of_the_Seas_%2850991506292%29.jpg/960px-RCCL_Harmony_of_the_Seas_%2850991506292%29.jpg",
-    attractions: ["Ultimate Abyss","FlowRider","Central Park"]
-  }
-];
-
-// =========================
-// SCORING
-// =========================
-function scoreShip(ship, budget, atmosphere, size, amenities){
-
-  let score = 0;
-  let maxScore = 0;
-
-  maxScore++;
-  if(ship.budget === budget) score++;
-
-  maxScore++;
-  if(ship.size === size) score++;
-
-  if(atmosphere.length){
-    maxScore++;
-    score += ship.atmosphere.filter(a => atmosphere.includes(a)).length / atmosphere.length;
-  }
-
-  if(amenities.length){
-    maxScore++;
-    score += ship.amenities.filter(a => amenities.includes(a)).length / amenities.length;
-  }
-
-  return (score / maxScore) * 100;
-}
-
-// =========================
-// MAIN FUNCTION
-// =========================
-function calculateScores(){
-
-  const budget = document.getElementById("budget").value;
-  const size = document.getElementById("size").value;
-  const atmosphere = getSelectedButtons("atmosphere");
-  const amenities = getSelectedButtons("amenities");
-
-  const scoredShips = ships.map(ship => ({
-    ...ship,
-    score: scoreShip(ship, budget, atmosphere, size, amenities)
-  }));
-
-  scoredShips.sort((a,b) => b.score - a.score);
-
-  currentResults = scoredShips;
-
-  document.getElementById("results").innerHTML = scoredShips.map((ship,index) => `
-    <div class="ship-card">
-      <img src="${ship.image}" class="w-full h-52 object-cover">
-
-      <div class="p-5">
-
-        ${index === 0 ? `<div class="text-blue-600 font-bold text-sm mb-2">BEST MATCH</div>` : ""}
-
-        <h2 class="text-2xl font-bold">${ship.name}</h2>
-
-        <p class="mt-3 text-gray-600">
-          ${ship.atmosphere.join(" · ")}
-        </p>
-
-        <div class="mt-5">
-          <div class="h-2 rounded-full bg-gray-200 overflow-hidden">
-            <div class="h-full bg-blue-600" style="width:${ship.score}%"></div>
-          </div>
-
-          <p class="mt-2 text-sm text-gray-500">
-            Match Score: ${Math.round(ship.score)}%
-          </p>
-        </div>
-
-      </div>
-    </div>
-  `).join("");
-}
-</script>
+<script src="ship_matcher.js"></script>
 
 </body>
 </html>
