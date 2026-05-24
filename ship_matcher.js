@@ -28,14 +28,11 @@ function getSelectedButtons(id){
     document.querySelectorAll(`#${id} .active`)
   ).map(button => button.dataset.value);
 
-}
-
 // =========================
-// SHIP DATA
+// SHIP DATA (CONSISTENT FORMAT)
 // =========================
 
 const ships = [
-
   {
     name: "Celebrity Millennium",
     budget: "Luxury",
@@ -49,7 +46,19 @@ const ships = [
       "Spa & Fitness Center"
     ]
   },
-
+  {
+    name: "Nieuw Statendam",
+    budget: "Luxury",
+    atmosphere: ["Relaxation", "Adventure"],
+    size: "Medium",
+    amenities: ["Bars", "Spa", "Shows"],
+    image: "https://res.cloudinary.com/cruiseimages/q_auto,f_auto,w_750,ar_4:3,c_fit/ship/1144214.jpg",
+    attractions: [
+      "Music Hall",
+      "Retreat Spa",
+      "Main Dining Room"
+    ]
+  },
   {
     name: "MSC Divina",
     budget: "Mid",
@@ -62,8 +71,60 @@ const ships = [
       "Aurea Spa",
       "Kids Club Aqua Park"
     ]
+  },
+  {
+    name: "Mariner of the Seas",
+    budget: "Mid",
+    atmosphere: ["Adventure", "Family"],
+    size: "Large",
+    amenities: ["Pools", "Adventure Park", "Shows", "Bars", "Kids Club"],
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Bahamas_Cruise_-_ship_exterior_-_June_2018_%283303%29.jpg/960px-Bahamas_Cruise_-_ship_exterior_-_June_2018_%283303%29.jpg",
+    attractions: [
+      "FlowRider Surf Simulator",
+      "Adventure Ocean Kids Club",
+      "Broadway Shows"
+    ]
+  },
+  {
+    name: "Carnival Vista",
+    budget: "Budget",
+    atmosphere: ["Adventure", "Party"],
+    size: "Large",
+    amenities: ["Pools", "Bars", "Shows"],
+    image: "https://eatsleepcruise.com/wp-content/uploads/2025/07/Carnival-Vista-Cruise-Review-Feature.jpg.optimal.jpg",
+    attractions: [
+      "SkyRide",
+      "WaterWorks Park",
+      "IMAX Theater"
+    ]
+  },
+  {
+    name: "Norwegian Breakaway",
+    budget: "Mid",
+    atmosphere: ["Party", "Adventure"],
+    size: "Large",
+    amenities: ["Pools", "Bars", "Shows", "Adventure Park"],
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Norwegian_Breakaway_Jan_20_2023.jpg/960px-Norwegian_Breakaway_Jan_20_2023.jpg",
+    attractions: [
+      "The Waterfront Promenade",
+      "Ropes Course & Zipline",
+      "Burn the Floor Show",
+      "Aqua Park Water Slides"
+    ]
+  },
+  {
+    name: "Royal Caribbean Harmony of the Seas",
+    budget: "Mid",
+    atmosphere: ["Adventure", "Family"],
+    size: "Mega",
+    amenities: ["Pools", "Spa", "Shows", "Adventure Park", "Bars"],
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/RCCL_Harmony_of_the_Seas_%2850991506292%29.jpg/960px-RCCL_Harmony_of_the_Seas_%2850991506292%29.jpg",
+    attractions: [
+      "Ultimate Abyss Slide",
+      "FlowRider",
+      "Central Park Promenade"
+    ]
   }
-
 ];
 
 // =========================
