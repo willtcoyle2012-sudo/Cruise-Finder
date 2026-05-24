@@ -1,5 +1,5 @@
 // =========================
-// GLOBAL STATE
+// STATE
 // =========================
 
 let currentResults = [];
@@ -10,11 +10,13 @@ let currentResults = [];
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  document.querySelectorAll(".option-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      button.classList.toggle("active");
+  document.querySelectorAll(".option-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
     });
   });
+
+  startBannerSlider();
 
 });
 
@@ -22,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // GET SELECTED BUTTONS
 // =========================
 
-function getSelectedButtons(id) {
+function getSelectedButtons(id){
   return Array.from(
     document.querySelectorAll(`#${id} .active`)
-  ).map(button => button.dataset.value);
+  ).map(btn => btn.dataset.value);
 }
 
 // =========================
@@ -40,7 +42,7 @@ const ships = [
     size: "Medium",
     amenities: ["Pools", "Spa", "Shows", "Bars"],
     image: "https://www.wendywutours.co.uk/resource/upload/2563/cel-ml-blue-hull-aerial-4-banner.jpg.webp",
-    attractions: ["Celebrity Theater", "Solarium", "Spa & Fitness Center"]
+    attractions: ["Celebrity Theater","Solarium","Spa & Fitness"]
   },
   {
     name: "Nieuw Statendam",
@@ -49,7 +51,7 @@ const ships = [
     size: "Medium",
     amenities: ["Bars", "Spa", "Shows"],
     image: "https://res.cloudinary.com/cruiseimages/q_auto,f_auto,w_750,ar_4:3,c_fit/ship/1144214.jpg",
-    attractions: ["Music Hall", "Retreat Spa", "Main Dining Room"]
+    attractions: ["Music Hall","Retreat Spa","Dining Room"]
   },
   {
     name: "MSC Divina",
@@ -58,7 +60,7 @@ const ships = [
     size: "Large",
     amenities: ["Pools", "Shows", "Kids Club", "Bars"],
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MSC_Divina_a_Istanbul.JPG/960px-MSC_Divina_a_Istanbul.JPG",
-    attractions: ["MSC Theater", "Aurea Spa", "Kids Club Aqua Park"]
+    attractions: ["MSC Theater","Aqua Park","Spa"]
   },
   {
     name: "Mariner of the Seas",
@@ -67,7 +69,7 @@ const ships = [
     size: "Large",
     amenities: ["Pools", "Adventure Park", "Shows", "Bars", "Kids Club"],
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Bahamas_Cruise_-_ship_exterior_-_June_2018_%283303%29.jpg/960px-Bahamas_Cruise_-_ship_exterior_-_June_2018_%283303%29.jpg",
-    attractions: ["FlowRider Surf Simulator", "Adventure Ocean Kids Club", "Broadway Shows"]
+    attractions: ["FlowRider","Kids Club","Shows"]
   },
   {
     name: "Carnival Vista",
@@ -76,7 +78,7 @@ const ships = [
     size: "Large",
     amenities: ["Pools", "Bars", "Shows"],
     image: "https://eatsleepcruise.com/wp-content/uploads/2025/07/Carnival-Vista-Cruise-Review-Feature.jpg.optimal.jpg",
-    attractions: ["SkyRide", "WaterWorks Park", "IMAX Theater"]
+    attractions: ["SkyRide","Water Park","IMAX"]
   },
   {
     name: "Norwegian Breakaway",
@@ -85,44 +87,40 @@ const ships = [
     size: "Large",
     amenities: ["Pools", "Bars", "Shows", "Adventure Park"],
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Norwegian_Breakaway_Jan_20_2023.jpg/960px-Norwegian_Breakaway_Jan_20_2023.jpg",
-    attractions: ["The Waterfront Promenade", "Ropes Course & Zipline", "Burn the Floor Show", "Aqua Park Water Slides"]
+    attractions: ["Ropes Course","Water Slides","Promenade"]
   },
   {
-    name: "Royal Caribbean Harmony of the Seas",
+    name: "Harmony of the Seas",
     budget: "Mid",
     atmosphere: ["Adventure", "Family"],
     size: "Mega",
     amenities: ["Pools", "Spa", "Shows", "Adventure Park", "Bars"],
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/RCCL_Harmony_of_the_Seas_%2850991506292%29.jpg/960px-RCCL_Harmony_of_the_Seas_%2850991506292%29.jpg",
-    attractions: ["Ultimate Abyss Slide", "FlowRider", "Central Park Promenade"]
+    attractions: ["Abyss Slide","Central Park","FlowRider"]
   }
 ];
 
 // =========================
-// SCORING FUNCTION
+// SCORING
 // =========================
 
-function scoreShip(ship, budget, atmosphere, size, amenities) {
+function scoreShip(ship, budget, atmosphere, size, amenities){
 
   let score = 0;
   let maxScore = 0;
 
-  // Budget match
   maxScore++;
-  if (ship.budget === budget) score++;
+  if(ship.budget === budget) score++;
 
-  // Size match
   maxScore++;
-  if (ship.size === size) score++;
+  if(ship.size === size) score++;
 
-  // Atmosphere match
-  if (atmosphere.length) {
+  if(atmosphere.length){
     maxScore++;
     score += ship.atmosphere.filter(a => atmosphere.includes(a)).length / atmosphere.length;
   }
 
-  // Amenities match
-  if (amenities.length) {
+  if(amenities.length){
     maxScore++;
     score += ship.amenities.filter(a => amenities.includes(a)).length / amenities.length;
   }
@@ -131,54 +129,65 @@ function scoreShip(ship, budget, atmosphere, size, amenities) {
 }
 
 // =========================
-// MAIN SEARCH FUNCTION
+// MAIN SEARCH
 // =========================
 
-function calculateScores() {
+function calculateScores(){
 
   const budget = document.getElementById("budget").value;
   const size = document.getElementById("size").value;
   const atmosphere = getSelectedButtons("atmosphere");
   const amenities = getSelectedButtons("amenities");
 
-  const scoredShips = ships.map(ship => ({
+  const scored = ships.map(ship => ({
     ...ship,
     score: scoreShip(ship, budget, atmosphere, size, amenities)
   }));
 
-  scoredShips.sort((a, b) => b.score - a.score);
+  scored.sort((a,b) => b.score - a.score);
 
-  currentResults = scoredShips;
-
-  const resultsEl = document.getElementById("results");
-
-  resultsEl.innerHTML = scoredShips.map((ship, index) => `
+  document.getElementById("results").innerHTML = scored.map((ship,i)=>`
     <div class="ship-card">
       <img src="${ship.image}" class="w-full h-52 object-cover">
 
       <div class="p-5">
-
-        ${index === 0 ? `<div class="text-blue-600 font-bold text-sm mb-2">BEST MATCH</div>` : ""}
-
+        ${i===0?`<div class="text-blue-600 font-bold text-sm mb-2">BEST MATCH</div>`:""}
         <h2 class="text-2xl font-bold">${ship.name}</h2>
 
         <p class="mt-3 text-gray-600">
           ${ship.atmosphere.join(" · ")}
         </p>
 
-        <div class="mt-5">
-
-          <div class="h-2 rounded-full bg-gray-200 overflow-hidden">
-            <div class="h-full bg-blue-600" style="width:${ship.score}%"></div>
-          </div>
-
-          <p class="mt-2 text-sm text-gray-500">
-            Match Score: ${Math.round(ship.score)}%
-          </p>
-
+        <div class="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="h-full bg-blue-600" style="width:${ship.score}%"></div>
         </div>
 
+        <p class="text-sm text-gray-500 mt-2">
+          Match Score: ${Math.round(ship.score)}%
+        </p>
       </div>
     </div>
   `).join("");
+}
+
+// =========================
+// BANNER SLIDER
+// =========================
+
+const bannerImages = [
+  "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147843317/images/6851e1-8b04-3a1f-3f13-f66668f4a45_rccl-cococay-landscape-professor-melissa-horizontal-3.jpg",
+  "https://www.cruisehive.com/wp-content/uploads/2024/08/nassaucruise1.jpg",
+  "https://cruisefever.net/wp-content/uploads/2023/08/cruise-port-scams-to-avoid.jpg"
+];
+
+let bannerIndex = 0;
+
+function startBannerSlider(){
+  const img = document.getElementById("bannerImage");
+  if(!img) return;
+
+  setInterval(() => {
+    bannerIndex = (bannerIndex + 1) % bannerImages.length;
+    img.src = bannerImages[bannerIndex];
+  }, 4000);
 }
