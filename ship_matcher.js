@@ -36,7 +36,7 @@ function getSelectedButtons(id){
 
 const ships = [
   {
-    name: "Celebrity Millennium",
+    name: "Celebrity Constellation",
     budget: "Luxury",
     atmosphere: ["Relaxation", "Adventure"],
     size: "Medium",
