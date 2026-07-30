@@ -132,7 +132,7 @@ const ships = [
     ],
 
     image:
-    "https://www.cruisemapper.com/images/ships/large/2306-0e5e83c80c4c4a0f0b7a7d5d2e9c3b8f.jpg",
+    "https://www.kreuzfahrten.de/data/pictures/ship/explora-journeys-explora-i-5005-20230929-0.jpg",
 
     attractions: [
         "Ocean Wellness Spa",
@@ -168,7 +168,7 @@ const ships = [
     ],
 
     image:
-    "PASTE_IMAGE_URL_HERE",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpUAyaDoiNnD7xves57NRc7wHXDWTcb8XtpHkn1F4qjg&s",
 
     attractions: [
         "Carnival WaterWorks",
@@ -200,7 +200,7 @@ const ships = [
     ],
 
     image:
-    "PASTE_IMAGE_URL_HERE",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ambience_moored_at_Pier_25_in_Port_of_Tallinn_19_May_2022_%28cropped%29.jpg/960px-Ambience_moored_at_Pier_25_in_Port_of_Tallinn_19_May_2022_%28cropped%29.jpg",
 
     attractions: [
         "The Palladium Theatre",
@@ -235,7 +235,7 @@ const ships = [
     ],
 
     image:
-    "PASTE_IMAGE_URL_HERE",
+    "https://www.cruisemapper.com/images/ships/682-97dc8b10300f.jpg",
 
     attractions: [
         "The Veranda",
@@ -267,7 +267,7 @@ const ships = [
     ],
 
     image:
-    "PASTE_IMAGE_URL_HERE",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/MV_Aurora_2015-08-24_-_Side.JPG/960px-MV_Aurora_2015-08-24_-_Side.JPG",
 
     attractions: [
         "The Curzon Theatre",
@@ -299,7 +299,7 @@ const ships = [
     ],
 
     image:
-    "PASTE_IMAGE_URL_HERE",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Regatta%2C_Fremantle%2C_2018_%2804%29.jpg/960px-Regatta%2C_Fremantle%2C_2018_%2804%29.jpg",
 
     attractions: [
         "Aquamar Spa + Vitality Center",
@@ -333,7 +333,7 @@ const ships = [
     ],
 
     image:
-    "PASTE_IMAGE_URL_HERE",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-FRuPnP7OFJclsVB-8Hd-IMzrsdM2i9pYcCssP990LQ&s=10",
 
     attractions: [
         "Covent Garden Theatre",
