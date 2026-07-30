@@ -110,7 +110,244 @@ const ships = [
 },
 
 
+    
+{
+    name: "EXPLORA I",
 
+    line: "Explora Journeys",
+
+    budget: "Luxury",
+
+    atmosphere: [
+        "Relaxation"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars"
+    ],
+
+    image:
+    "https://www.cruisemapper.com/images/ships/large/2306-0e5e83c80c4c4a0f0b7a7d5d2e9c3b8f.jpg",
+
+    attractions: [
+        "Ocean Wellness Spa",
+        "Explora Lounge",
+        "The Conservatory Pool & Bar"
+    ]
+},
+
+
+
+{
+    name: "Carnival Paradise",
+
+    line: "Carnival Cruise Line",
+
+    budget: "Budget",
+
+    atmosphere: [
+        "Family",
+        "Party",
+        "Relaxation"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars",
+        "Adventure Park",
+        "Kids Club"
+    ],
+
+    image:
+    "PASTE_IMAGE_URL_HERE",
+
+    attractions: [
+        "Carnival WaterWorks",
+        "Cloud 9 Spa",
+        "The Punchliner Comedy Club"
+    ]
+},
+
+
+
+{
+    name: "Ambience",
+
+    line: "Ambassador Cruise Line",
+
+    budget: "Mid",
+
+    atmosphere: [
+        "Relaxation"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars"
+    ],
+
+    image:
+    "PASTE_IMAGE_URL_HERE",
+
+    attractions: [
+        "The Palladium Theatre",
+        "Green Sea Spa",
+        "The Observatory"
+    ]
+},
+    
+
+
+{
+    name: "Marella Voyager",
+
+    line: "Marella Cruises",
+
+    budget: "Mid",
+
+    atmosphere: [
+        "Family",
+        "Relaxation",
+        "Adventure"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars",
+        "Kids Club"
+    ],
+
+    image:
+    "PASTE_IMAGE_URL_HERE",
+
+    attractions: [
+        "The Veranda",
+        "The Broadway Show Lounge",
+        "The Kitchens"
+    ]
+},
+
+
+
+{
+    name: "Aurora",
+
+    line: "P&O Cruises",
+
+    budget: "Mid",
+
+    atmosphere: [
+        "Relaxation"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars"
+    ],
+
+    image:
+    "PASTE_IMAGE_URL_HERE",
+
+    attractions: [
+        "The Curzon Theatre",
+        "The Playhouse Cinema",
+        "Oasis Spa"
+    ]
+},
+
+
+
+{
+    name: "Regatta",
+
+    line: "Oceania Cruises",
+
+    budget: "Luxury",
+
+    atmosphere: [
+        "Relaxation"
+    ],
+
+    size: "Small",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars"
+    ],
+
+    image:
+    "PASTE_IMAGE_URL_HERE",
+
+    attractions: [
+        "Aquamar Spa + Vitality Center",
+        "Grand Dining Room",
+        "Horizons"
+    ]
+},
+
+
+
+{
+    name: "MSC Orchestra",
+
+    line: "MSC Cruises",
+
+    budget: "Mid",
+
+    atmosphere: [
+        "Family",
+        "Relaxation"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars",
+        "Kids Club"
+    ],
+
+    image:
+    "PASTE_IMAGE_URL_HERE",
+
+    attractions: [
+        "Covent Garden Theatre",
+        "MSC Aurea Spa",
+        "Savannah Bar"
+    ]
+},
+
+
+
+
+
+    
+    
 {
     name:"MSC Divina",
     line:"MSC Cruises",
