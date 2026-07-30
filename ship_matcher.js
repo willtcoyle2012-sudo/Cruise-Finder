@@ -168,7 +168,7 @@ const ships = [
     ],
 
     image:
-    "https://www.cruisehive.com/wp-content/uploads/2021/10/carnivalparadise1.jpg",
+    "https://preview.redd.it/carnival-paradise-v0-c5wwrvrv9mof1.jpeg?width=640&crop=smart&auto=webp&s=ee8a3aa578f89064122323a8c823791288e5dcc3",
 
     attractions: [
         "Carnival WaterWorks",
