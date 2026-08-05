@@ -474,8 +474,41 @@ const ships = [
     ]
 },
 
+    
+
+{
+    name: "Celebrity Silhouette",
+
+    line: "Celebrity Cruises",
+
+    budget: "Luxury",
+
+    atmosphere: [
+        "Relaxation",
+        "Adventure"
+    ],
+
+    size: "Medium",
+
+    amenities: [
+        "Pools",
+        "Spa",
+        "Shows",
+        "Bars"
+    ],
+
+    image:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Celebrity_Silhouette_%28ship%2C_2011%29_at_Liverpool_Cruise_Terminal_1.jpg/960px-Celebrity_Silhouette_%28ship%2C_2011%29_at_Liverpool_Cruise_Terminal_1.jpg",
+
+    attractions: [
+        "The Lawn Club",
+        "The Retreat Lounge",
+        "The Theatre"
+    ]
+},
 
 
+    
 {
     name:"Harmony of the Seas",
     line:"Royal Caribbean",
