@@ -679,22 +679,18 @@ function calculateScores(){
 
 function displayResults(results){
 
-
     document.getElementById("results").innerHTML =
 
     results.map((ship,index)=>`
 
-
-    <div class="ship-card">
-
+    <div class="ship-card cursor-pointer"
+        onclick="openModal(${index})">
 
         <img
         src="${ship.image}"
         class="w-full h-52 object-cover">
 
-
         <div class="p-5">
-
 
         ${
             index===0
@@ -706,23 +702,17 @@ function displayResults(results){
             ""
         }
 
-
-
         <h2 class="text-2xl font-bold">
         ${ship.name}
         </h2>
-
 
         <p class="text-sm text-gray-500 mt-1">
         ${ship.line}
         </p>
 
-
         <p class="mt-3 text-gray-600">
-        ${ship.atmosphere.join(" · ")}
+        ${ship.atmosphere.join(" • ")}
         </p>
-
-
 
         <div class="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
 
@@ -733,21 +723,115 @@ function displayResults(results){
 
         </div>
 
-
-
         <p class="text-sm text-gray-500 mt-2">
         Match Score: ${Math.round(ship.score)}%
         </p>
 
+        <button
+        class="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl transition">
 
+        View More
+
+        </button>
 
         </div>
 
-
     </div>
 
-
     `).join("");
+
+}
+
+
+
+function openModal(index){
+
+    const ship = currentResults[index];
+
+    document.getElementById("modalContent").innerHTML = `
+
+        <img
+        src="${ship.image}"
+        class="w-full h-72 object-cover rounded-t-[32px]">
+
+        <div class="p-8">
+
+            <h2 class="text-4xl font-bold">
+            ${ship.name}
+            </h2>
+
+            <p class="text-lg text-gray-500 mt-1">
+            ${ship.line}
+            </p>
+
+            <div class="flex gap-2 flex-wrap mt-6">
+
+                <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
+                ${Math.round(ship.score)}% Match
+                </span>
+
+                <span class="bg-gray-100 px-4 py-2 rounded-full">
+                ${ship.budget}
+                </span>
+
+                <span class="bg-gray-100 px-4 py-2 rounded-full">
+                ${ship.size}
+                </span>
+
+            </div>
+
+            <h3 class="font-bold text-xl mt-8">
+            Atmosphere
+            </h3>
+
+            <p class="mt-2">
+            ${ship.atmosphere.join(", ")}
+            </p>
+
+            <h3 class="font-bold text-xl mt-6">
+            Amenities
+            </h3>
+
+            <p class="mt-2">
+            ${ship.amenities.join(", ")}
+            </p>
+
+            <h3 class="font-bold text-xl mt-6">
+            Top Attractions
+            </h3>
+
+            <ul class="list-disc ml-6 mt-2">
+
+                ${ship.attractions.map(a=>`<li>${a}</li>`).join("")}
+
+            </ul>
+
+            <button
+            class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold">
+
+            Book Now
+
+            </button>
+
+        </div>
+
+    `;
+
+    const modal = document.getElementById("shipModal");
+    const modalContent = document.getElementById("shipModalContent");
+
+    modal.classList.remove("opacity-0","pointer-events-none");
+    modalContent.classList.remove("translate-y-8");
+
+}
+
+function closeModal(){
+
+    const modal = document.getElementById("shipModal");
+    const modalContent = document.getElementById("shipModalContent");
+
+    modal.classList.add("opacity-0","pointer-events-none");
+    modalContent.classList.add("translate-y-8");
 
 }
 
