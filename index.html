@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cruise Finder</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Montserrat',sans-serif;background:#f3f7fb;color:#1e293b}
+.option-btn{padding:10px 18px;border-radius:999px;background:#fff;border:1px solid #dbe4ee;transition:.2s}
+.option-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.ship-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);transition:.25s}
+.ship-card:hover{transform:translateY(-4px)}
+</style>
+</head>
+<body>
 
+<nav class="bg-white shadow-sm border-b">
+<div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+<h1 class="text-2xl font-bold text-blue-600">Cruise Finder</h1>
+<div class="space-x-8 text-gray-600">
+<a href="#">Home</a>
+<a href="#">Reviews</a>
+<a href="#">Cruise Lines</a>
+<a href="#">About</a>
+</div>
+</div>
+</nav>
+
+<section class="max-w-6xl mx-auto px-6 py-10">
+<div class="bg-white rounded-3xl shadow-lg p-8">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<h2 class="text-5xl font-bold">Find the cruise that's right for you.</h2>
+<p class="mt-4 text-lg text-gray-600">Search cruise ships by budget, atmosphere, ship size and onboard facilities.</p>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-lg h-72">
+<img id="bannerImage" class="w-full h-full object-cover" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/2147843317/images/6851e1-8b04-3a1f-3f13-f66668f4a45_rccl-cococay-landscape-professor-melissa-horizontal-3.jpg">
+</div>
+</div>
+</div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6">
+<div class="bg-white rounded-3xl shadow-lg p-8">
+<h3 class="text-3xl font-bold mb-8">Search for Your Perfect Cruise</h3>
+
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<label class="font-bold">Budget</label>
+<select id="budget" class="w-full mt-3 p-3 rounded-2xl border bg-gray-50">
+<option>Budget</option><option>Mid</option><option>Luxury</option>
+</select>
+</div>
+<div>
+<label class="font-bold">Ship Size</label>
+<select id="size" class="w-full mt-3 p-3 rounded-2xl border bg-gray-50">
+<option>Small</option><option>Medium</option><option>Large</option><option>Mega</option>
+</select>
+</div>
+</div>
+
+<div class="mt-8">
+<label class="font-bold">Atmosphere</label>
+<div id="atmosphere" class="flex flex-wrap gap-3 mt-4">
+<button class="option-btn" data-value="Family">Family</button>
+<button class="option-btn" data-value="Adventure">Adventure</button>
+<button class="option-btn" data-value="Relaxation">Relaxation</button>
+<button class="option-btn" data-value="Party">Party</button>
+</div>
+</div>
+
+<div class="mt-8">
+<label class="font-bold">Amenities</label>
+<div id="amenities" class="flex flex-wrap gap-3 mt-4">
+<button class="option-btn" data-value="Pools">Pools</button>
+<button class="option-btn" data-value="Spa">Spa</button>
+<button class="option-btn" data-value="Shows">Shows</button>
+<button class="option-btn" data-value="Bars">Bars</button>
+<button class="option-btn" data-value="Adventure Park">Adventure Park</button>
+<button class="option-btn" data-value="Kids Club">Kids Club</button>
+</div>
+</div>
+
+<div class="text-center mt-10">
+<button onclick="calculateScores()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold">Find My Perfect Ship</button>
+</div>
+</div>
+</section>
+
+<section id="resultsSection" class="max-w-6xl mx-auto px-6 py-12">
+<h2 class="text-3xl font-bold mb-6">Recommended Ships</h2>
+<div id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</section>
+
+<footer class="bg-white border-t mt-12">
+<div class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500">
+<p class="font-bold text-blue-600 text-xl">Cruise Finder</p>
+<p class="mt-2">Find your next cruise with confidence.</p>
+<p class="mt-4 text-sm">© 2026 Cruise Finder</p>
+</div>
+</footer>
+
+<div id="shipModal" class="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition">
+<div id="shipModalContent" class="bg-white rounded-3xl max-w-4xl w-full overflow-hidden transform translate-y-8 transition relative">
+<button onclick="closeModal()" class="absolute top-4 right-6 text-4xl text-white">&times;</button>
+<div id="modalContent"></div>
+</div>
+</div>
+
+<script src="ship_matcher.js"></script>
+</body>
+</html>
