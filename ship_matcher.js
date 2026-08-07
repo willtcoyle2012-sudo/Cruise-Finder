@@ -51,9 +51,11 @@ const ships = [
 {
     name: "Celebrity Constellation",
     line: "Celebrity Cruises",
-
+ booking:
+    "https://www.celebritycruises.com/ships/celebrity-constellation",
+ 
     budget: "Luxury",
-
+ 
     atmosphere:[
         "Relaxation",
         "Adventure"
@@ -488,7 +490,7 @@ const ships = [
         "Adventure"
     ],
 
-    size: "Medium",
+    size: "Large",
 
     amenities: [
         "Pools",
