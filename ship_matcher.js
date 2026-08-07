@@ -154,7 +154,7 @@ const ships = [
     booking:
     "https://www.carnival.com/cruise-ships/carnival-paradise",
  
-   budgett "Budget",
+   budget "Budget",
 
     atmosphere: [
         "Family",
@@ -764,7 +764,9 @@ function displayResults(results){
 
 }
 
-
+// =========================
+// Modal
+// =========================
 
 function openModal(index){
 
@@ -828,7 +830,7 @@ function openModal(index){
 
             </ul>
 
-          <a
+ <a
 href="${ship.booking}"
 target="_blank"
 class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold text-center block">
