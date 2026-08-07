@@ -660,7 +660,7 @@ console.log("CALCULATE SCORES FIRED");
     const amenities =
     getSelectedButtons("amenities");
 
-
+    console.log("FILTERS LOADED");
 
     const scoredShips =
     ships.map(ship => ({
