@@ -643,6 +643,7 @@ function scoreShip(ship, budget, atmosphere, size, amenities){
 
 function calculateScores(){
 
+console.log("CALCULATE SCORES FIRED"); 
 
     const budget =
     document.getElementById("budget").value;
