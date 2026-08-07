@@ -693,7 +693,9 @@ function calculateScores(){
 
 }
 
-
+document.getElementById("resultsSection").scrollIntoView({
+    behavior:"smooth"
+});
 
 // =========================
 // DISPLAY RESULTS
