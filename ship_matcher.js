@@ -645,22 +645,29 @@ function calculateScores(){
 
 console.log("CALCULATE SCORES FIRED"); 
 
-    const budget =
-    document.getElementById("budget").value;
+console.log("1");
 
+const budget =
+document.getElementById("budget").value;
 
-    const size =
-    document.getElementById("size").value;
+console.log("2");
 
+const size =
+document.getElementById("size").value;
 
-    const atmosphere =
-    getSelectedButtons("atmosphere");
+console.log("3");
 
+const atmosphere =
+getSelectedButtons("atmosphere");
 
-    const amenities =
-    getSelectedButtons("amenities");
+console.log("4");
 
-    console.log("FILTERS LOADED");
+const amenities =
+getSelectedButtons("amenities");
+
+console.log("5");
+
+console.log("FILTERS LOADED");
 
     const scoredShips =
     ships.map(ship => ({
