@@ -776,6 +776,8 @@ console.log("RESULTS ELEMENT:", document.getElementById("results"));
 
     `).join("");
 
+ console.log("HTML GENERATED SUCCESSFULLY");
+
 }
 
 // =========================
