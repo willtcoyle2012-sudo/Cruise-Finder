@@ -712,6 +712,8 @@ document.getElementById("resultsSection").scrollIntoView({
 
 function displayResults(results){
 
+console.log("DISPLAY RESULTS FIRED");
+ 
     document.getElementById("results").innerHTML =
 
     results.map((ship,index)=>`
