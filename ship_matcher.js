@@ -51,8 +51,8 @@ const ships = [
 {
     name: "Celebrity Constellation",
     line: "Celebrity Cruises",
- booking:
-    "https://www.celebritycruises.com/ships/celebrity-constellation",
+    booking:
+    "https://www.celebritycruises.com/cruise-ships/celebrity-constellation",
  
     budget: "Luxury",
  
@@ -85,7 +85,9 @@ const ships = [
 {
     name:"Nieuw Statendam",
     line:"Holland America Line",
-
+    booking:
+    "https://www.hollandamerica.com/en/eu/find-a-cruise?shipId:(NS)",
+ 
     budget:"Luxury",
 
     atmosphere:[
@@ -115,9 +117,10 @@ const ships = [
     
 {
     name: "EXPLORA I",
-
     line: "Explora Journeys",
-
+    booking:
+    "https://explorajourneys.com/ie/en/ships/explora-I?_gl=1*hzcssc*_up*MQ..*_gs*MQ..&gclid=CjwKCAjwhNbTBhB4EiwAsFSg-n-CA4WXjphnlqvrq70Swj-DxHkawOLqpG9TbN-jc-G-Nu9JpQkSghoCxlAQAvD_BwE&gbraid=0AAAAAoVePPVwptj-THUz6i07n2NgVle_H&perPage=9&sortCriteria=ec_prd_sail_from_datetime%20asc%2Cec_prd_price_double_sellingprice%20asc&f-ec_prd_ship_name=EXPLORA%20I",
+ 
     budget: "Luxury",
 
     atmosphere: [
@@ -147,10 +150,10 @@ const ships = [
 
 {
     name: "Carnival Paradise",
-
     line: "Carnival Cruise Line",
-
-    budget: "Budget",
+    
+     
+   budgett "Budget",
 
     atmosphere: [
         "Family",
