@@ -696,6 +696,7 @@ console.log("FILTERS LOADED");
     currentResults = scoredShips;
 
 console.log("SCORES CALCULATED");
+console.log("ABOUT TO DISPLAY RESULTS");
 
     displayResults(scoredShips);
 
