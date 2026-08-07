@@ -808,12 +808,14 @@ function openModal(index){
 
             </ul>
 
-            <button
-            class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold">
+          <a
+href="${ship.booking}"
+target="_blank"
+class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold text-center block">
 
-            Book Now
+View Sailings
 
-            </button>
+</a>
 
         </div>
 
