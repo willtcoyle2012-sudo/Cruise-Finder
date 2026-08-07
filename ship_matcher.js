@@ -154,7 +154,7 @@ const ships = [
     booking:
     "https://www.carnival.com/cruise-ships/carnival-paradise",
  
-   budget "Budget",
+   budget: "Budget",
 
     atmosphere: [
         "Family",
