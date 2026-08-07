@@ -713,6 +713,7 @@ document.getElementById("resultsSection").scrollIntoView({
 function displayResults(results){
 
 console.log("DISPLAY RESULTS FIRED");
+console.log("RESULTS ELEMENT:", document.getElementById("results"));
  
     document.getElementById("results").innerHTML =
 
