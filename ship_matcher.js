@@ -151,8 +151,9 @@ const ships = [
 {
     name: "Carnival Paradise",
     line: "Carnival Cruise Line",
-    
-     
+    booking:
+    "https://www.carnival.com/cruise-ships/carnival-paradise",
+ 
    budgett "Budget",
 
     atmosphere: [
@@ -186,9 +187,10 @@ const ships = [
 
 {
     name: "Ambience",
-
     line: "Ambassador Cruise Line",
-
+    booking:
+    "https://www.ambassadorcruiseline.com/our-ships/ambience/",
+ 
     budget: "Mid",
 
     atmosphere: [
@@ -218,9 +220,10 @@ const ships = [
 
 {
     name: "Marella Voyager",
-
     line: "Marella Cruises",
-
+    booking:
+    "https://www.tui.co.uk/cruise/ships/marella-voyager/",
+  
     budget: "Mid",
 
     atmosphere: [
@@ -253,9 +256,10 @@ const ships = [
 
 {
     name: "Aurora",
-
     line: "P&O Cruises",
-
+    booking:
+    "https://www.pocruises.com/cruise-ships/aurora/overview",
+  
     budget: "Mid",
 
     atmosphere: [
@@ -285,9 +289,10 @@ const ships = [
 
 {
     name: "Regatta",
-
     line: "Oceania Cruises",
-
+    booking:
+    "https://www.oceaniacruises.com/ships/regatta",
+  
     budget: "Luxury",
 
     atmosphere: [
@@ -317,9 +322,10 @@ const ships = [
 
 {
     name: "MSC Orchestra",
-
     line: "MSC Cruises",
-
+    booking:
+    "https://www.msccruises.ie/ships/msc-orchestra",
+  
     budget: "Mid",
 
     atmosphere: [
@@ -356,7 +362,9 @@ const ships = [
 {
     name:"MSC Divina",
     line:"MSC Cruises",
-
+    booking:
+    "https://www.msccruises.ie/ships/msc-divina",
+  
     budget:"Mid",
 
     atmosphere:[
@@ -388,7 +396,9 @@ const ships = [
 {
     name:"Mariner of the Seas",
     line:"Royal Caribbean",
-
+    booking:
+    "https://www.royalcaribbean.com/gbr/en/cruise-ships/mariner-of-the-seas",
+  
     budget:"Mid",
 
     atmosphere:[
@@ -421,7 +431,9 @@ const ships = [
 {
     name:"Carnival Vista",
     line:"Carnival Cruise Line",
-
+    booking:
+    "https://www.carnival.com/cruise-ships/carnival-vista",
+  
     budget:"Budget",
 
     atmosphere:[
@@ -452,7 +464,9 @@ const ships = [
 {
     name:"Norwegian Breakaway",
     line:"Norwegian Cruise Line",
-
+    booking:
+    "https://www.ncl.com/fr/en/cruise-ship/breakaway",
+  
     budget:"Mid",
 
     atmosphere:[
@@ -483,9 +497,10 @@ const ships = [
 
 {
     name: "Celebrity Silhouette",
-
     line: "Celebrity Cruises",
-
+    booking:
+    "https://www.celebritycruises.com/ie/cruise-ships/celebrity-silhouette",
+ 
     budget: "Luxury",
 
     atmosphere: [
@@ -517,7 +532,9 @@ const ships = [
 {
     name:"Harmony of the Seas",
     line:"Royal Caribbean",
-
+    booking:
+    "https://www.royalcaribbean.com/gbr/en/cruise-ships/harmony-of-the-seas",
+ 
     budget:"Mid",
 
     atmosphere:[
