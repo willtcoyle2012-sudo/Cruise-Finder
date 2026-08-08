@@ -133,6 +133,7 @@ class="w-full h-full object-cover">
 
 </section>
 
+```html
 <!-- Filters -->
 
 <section class="max-w-6xl mx-auto px-6 mt-8">
@@ -179,6 +180,89 @@ class="w-full mt-3 p-3 rounded-2xl border bg-gray-50">
 </div>
 
 </div>
+
+<!-- Preferred Onboard Language -->
+
+<div class="mt-8">
+
+<label class="font-bold text-sm">
+Preferred Onboard Language
+</label>
+
+<select
+id="language"
+class="w-full mt-3 p-3 rounded-2xl border bg-gray-50">
+
+<option value="English">English</option>
+<option value="Italian">Italian</option>
+<option value="Spanish">Spanish</option>
+<option value="French">French</option>
+<option value="German">German</option>
+
+</select>
+
+</div>
+
+<!-- Atmosphere -->
+
+<div class="mt-8">
+
+<label class="font-bold text-sm">
+Atmosphere
+</label>
+
+<div
+id="atmosphere"
+class="flex flex-wrap gap-3 mt-4">
+
+<button class="option-btn" data-value="Family">Family</button>
+<button class="option-btn" data-value="Adventure">Adventure</button>
+<button class="option-btn" data-value="Relaxation">Relaxation</button>
+<button class="option-btn" data-value="Party">Party</button>
+
+</div>
+
+</div>
+
+<!-- Amenities -->
+
+<div class="mt-8">
+
+<label class="font-bold text-sm">
+Amenities
+</label>
+
+<div
+id="amenities"
+class="flex flex-wrap gap-3 mt-4">
+
+<button class="option-btn" data-value="Pools">Pools</button>
+<button class="option-btn" data-value="Spa">Spa</button>
+<button class="option-btn" data-value="Shows">Shows</button>
+<button class="option-btn" data-value="Bars">Bars</button>
+<button class="option-btn" data-value="Adventure Park">Adventure Park</button>
+<button class="option-btn" data-value="Kids Club">Kids Club</button>
+
+</div>
+
+</div>
+
+<div class="text-center mt-10">
+
+<button
+onclick="calculateScores()"
+class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition">
+
+Find My Perfect Ship
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+```
 
 <!-- Atmosphere -->
 
