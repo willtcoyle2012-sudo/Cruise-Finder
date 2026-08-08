@@ -318,7 +318,7 @@ language: ["English"],
 
 language: ["English"],
     
-atmosphere: ["Adventure"
+atmosphere: ["Adventure",
             "Relaxation"
     ],
 
