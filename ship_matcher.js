@@ -493,9 +493,9 @@ const ships = [
     ]
 },
 
+    
 
-
- {
+{
     name: "Celebrity Silhouette",
     line: "Celebrity Cruises",
     booking:
@@ -693,9 +693,7 @@ function calculateScores(){
 
 }
 
-document.getElementById("resultsSection").scrollIntoView({
-    behavior:"smooth"
-});
+
 
 // =========================
 // DISPLAY RESULTS
