@@ -922,4 +922,6 @@ function closeConstruction(){
         .classList.add("hidden");
 }
 
+console.log("CONSTRUCTION FUNCTIONS LOADED"); 
+
 }
