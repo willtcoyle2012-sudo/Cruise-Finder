@@ -62,9 +62,12 @@ const ships = [
     line: "Celebrity Cruises",
     booking:
     "https://www.celebritycruises.com/cruise-ships/celebrity-constellation",
- 
+   
+        
     budget: "Luxury",
- 
+
+    language: ["English"],
+              
     atmosphere:[
         "Relaxation",
         "Adventure"
@@ -99,6 +102,8 @@ const ships = [
  
     budget:"Luxury",
 
+    language: ["English", "French", "Dutch"],
+    
     atmosphere:[
         "Relaxation",
         "Adventure"
@@ -132,6 +137,8 @@ const ships = [
  
     budget: "Luxury",
 
+language: ["English", "French", "Italian", "Spanish", "German"],
+    
     atmosphere: [
         "Relaxation"
     ],
@@ -165,6 +172,8 @@ const ships = [
  
    budget: "Budget",
 
+language: ["English"],
+    
     atmosphere: [
         "Family",
         "Party",
@@ -202,6 +211,8 @@ const ships = [
  
     budget: "Mid",
 
+language: ["English"],
+    
     atmosphere: [
         "Relaxation"
     ],
@@ -235,6 +246,8 @@ const ships = [
   
     budget: "Mid",
 
+language: ["English"],
+    
     atmosphere: [
         "Family",
         "Relaxation",
@@ -271,6 +284,8 @@ const ships = [
   
     budget: "Mid",
 
+language: ["English"],
+    
     atmosphere: [
         "Relaxation"
     ],
@@ -304,6 +319,8 @@ const ships = [
   
     budget: "Luxury",
 
+language: ["English"],
+    
     atmosphere: [
         "Relaxation"
     ],
@@ -334,7 +351,9 @@ const ships = [
     line: "MSC Cruises",
     booking:
     "https://www.msccruises.ie/ships/msc-orchestra",
-  
+
+language: ["English", "Italian", "French", "Spanish"],
+    
     budget: "Mid",
 
     atmosphere: [
@@ -376,6 +395,8 @@ const ships = [
   
     budget:"Mid",
 
+language: ["English", "Italian", "French", "Spanish"],
+    
     atmosphere:[
         "Family",
         "Relaxation"
@@ -410,6 +431,8 @@ const ships = [
   
     budget:"Mid",
 
+language: ["English"],
+    
     atmosphere:[
         "Adventure",
         "Family"
@@ -445,6 +468,8 @@ const ships = [
   
     budget:"Budget",
 
+language: ["English"],
+    
     atmosphere:[
         "Adventure",
         "Party"
@@ -478,6 +503,8 @@ const ships = [
   
     budget:"Mid",
 
+language: ["English"],
+    
     atmosphere:[
         "Party",
         "Adventure"
@@ -512,6 +539,8 @@ const ships = [
  
     budget: "Luxury",
 
+language: ["English"],
+    
     atmosphere: [
         "Relaxation",
         "Adventure"
@@ -546,6 +575,8 @@ const ships = [
  
     budget:"Mid",
 
+language: ["English"],
+    
     atmosphere:[
         "Adventure",
         "Family"
@@ -579,7 +610,7 @@ const ships = [
 // SCORING
 // =========================
 
-function scoreShip(ship, budget, atmosphere, size, amenities){
+function scoreShip(ship, budget, atmosphere, size, amenities, language){
 
     let score = 0;
     let maxScore = 0;
@@ -609,6 +640,18 @@ function scoreShip(ship, budget, atmosphere, size, amenities){
 
 
 
+// Language
+
+maxScore++;
+
+if(ship.language.includes(language)){
+
+    score++;
+
+}
+
+
+    
     // Atmosphere
 
     if(atmosphere.length){
@@ -660,7 +703,11 @@ function calculateScores(){
     const size =
     document.getElementById("size").value;
 
+    
+    const language =
+    document.getElementById("language").value;
 
+    
     const atmosphere =
     getSelectedButtons("atmosphere");
 
@@ -676,12 +723,14 @@ function calculateScores(){
         ...ship,
 
         score:
-        scoreShip(
-            ship,
-            budget,
-            atmosphere,
-            size,
-            amenities
+       scoreShip(
+    ship,
+    budget,
+    atmosphere,
+    size,
+    amenities,
+    language
+)
         )
 
     }));
