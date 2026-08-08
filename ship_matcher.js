@@ -702,9 +702,9 @@ console.log("ABOUT TO DISPLAY RESULTS");
 
 }
 
-document.getElementById("resultsSection").scrollIntoView({
-    behavior:"smooth"
-});
+//document.getElementById("resultsSection").scrollIntoView({
+//    behavior:"smooth"
+//});
 
 // =========================
 // DISPLAY RESULTS
