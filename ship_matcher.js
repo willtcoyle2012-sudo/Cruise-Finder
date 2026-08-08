@@ -690,6 +690,7 @@ function calculateScores(){
 
 
     displayResults(scoredShips);
+  document.getElementById("resultsSection").style.display = "block";
 
 }
 
