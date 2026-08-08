@@ -910,5 +910,16 @@ function startBannerSlider(){
 
     },4000);
 
+ function showConstruction(){
+
+    document.getElementById("constructionModal")
+        .classList.remove("hidden");
+}
+
+function closeConstruction(){
+
+    document.getElementById("constructionModal")
+        .classList.add("hidden");
+}
 
 }
