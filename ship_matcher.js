@@ -321,8 +321,8 @@ language: ["English"],
 
 language: ["English"],
     
-    atmosphere: [
-        "Relaxation"
+atmosphere: ["Adventure"
+            "Relaxation"
     ],
 
     size: "Small",
@@ -356,11 +356,8 @@ language: ["English", "Italian", "French", "Spanish"],
     
     budget: "Mid",
 
-    atmosphere: [
-        "Family",
-        "Relaxation"
-    ],
-
+    atmosphere: ["Adventure"],
+        
     size: "Medium",
 
     amenities: [
@@ -399,7 +396,7 @@ language: ["English", "Italian", "French", "Spanish"],
     
     atmosphere:[
         "Family",
-        "Relaxation"
+        "Party"
     ],
 
     size:"Large",
