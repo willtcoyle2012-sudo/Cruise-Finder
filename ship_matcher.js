@@ -105,8 +105,7 @@ const ships = [
     language: ["English", "French", "Dutch"],
     
     atmosphere:[
-        "Relaxation",
-        "Adventure"
+        "Relaxation"
     ],
 
     size:"Medium",
@@ -177,7 +176,6 @@ language: ["English"],
     atmosphere: [
         "Family",
         "Party",
-        "Relaxation"
     ],
 
     size: "Medium",
@@ -250,8 +248,7 @@ language: ["English"],
     
     atmosphere: [
         "Family",
-        "Relaxation",
-        "Adventure"
+        "Relaxation"
     ],
 
     size: "Medium",
@@ -356,8 +353,10 @@ language: ["English", "Italian", "French", "Spanish"],
     
     budget: "Mid",
 
-    atmosphere: ["Adventure"],
-        
+    atmosphere: ["Family",
+                 "Party"
+                        ],
+                 
     size: "Medium",
 
     amenities: [
@@ -468,7 +467,7 @@ language: ["English"],
 language: ["English"],
     
     atmosphere:[
-        "Adventure",
+        "Family",
         "Party"
     ],
 
@@ -504,7 +503,7 @@ language: ["English"],
     
     atmosphere:[
         "Party",
-        "Adventure"
+        "Family"
     ],
 
     size:"Large",
