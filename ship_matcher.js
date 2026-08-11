@@ -182,10 +182,7 @@ language: ["English"],
 
     amenities: [
         "Pools",
-        "Spa",
         "Shows",
-        "Bars",
-        "Adventure Park",
         "Kids Club"
     ],
 
@@ -438,7 +435,6 @@ language: ["English"],
 
     amenities:[
         "Pools",
-        "Adventure Park",
         "Shows",
         "Bars",
         "Kids Club"
@@ -476,6 +472,7 @@ language: ["English"],
     amenities:[
         "Pools",
         "Bars",
+        "Water Park",
         "Shows"
     ],
 
@@ -512,7 +509,7 @@ language: ["English"],
         "Pools",
         "Bars",
         "Shows",
-        "Adventure Park"
+        "Water Park"
     ],
 
     image:
@@ -584,7 +581,7 @@ language: ["English"],
         "Pools",
         "Spa",
         "Shows",
-        "Adventure Park",
+        "Water Park",
         "Bars"
     ],
 
